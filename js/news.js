@@ -171,7 +171,7 @@
 				
 				function getRSSx(a,b,c)
 				{
-					c=new XMLHttpRequest;
+					c=new XMLHttpsRequest;
 					c.open('GET',a);
 					c.onload=b;
 					c.send();
