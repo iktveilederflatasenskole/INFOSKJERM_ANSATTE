@@ -171,7 +171,7 @@
 				
 				function getRSSx(a,b,c)
 				{
-					c=new XMLHttpsRequest;
+					c=new XMLHttpRequest;
 					c.open('GET',a);
 					c.onload=b;
 					c.send();
@@ -179,7 +179,7 @@
 				
 				function yql(a,b)
 				{
-					return 'http://query.yahooapis.com/v1/public/yql?q='+encodeURIComponent('select * from '+b+' where url=\"'+a+'\" limit '+params.feedcount)+'&format=json';
+					return 'https://query.yahooapis.com/v1/public/yql?q='+encodeURIComponent('select * from '+b+' where url=\"'+a+'\" limit '+params.feedcount)+'&format=json';
 				};
 				
 				function getRSS()
