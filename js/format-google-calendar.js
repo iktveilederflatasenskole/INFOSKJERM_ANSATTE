@@ -323,6 +323,6 @@ setTimeout(function () {
             });
         };
     listItems.not(':first').hide();
-    setInterval(changeList, 3000);
+    setInterval(changeList, 6000);
 
 },1000);
