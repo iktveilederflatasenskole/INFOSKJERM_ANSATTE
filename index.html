@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<!--TO DO-->
+<!--- TK-logo øverst til venstre-->
+<!--- bakgrunnsbilde-->
+<!--- layout på boksene-->
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <!--<meta http-equiv="refresh" content="600">-->
+  <title>Infoskjerm ansatte</title>
+  <link rel="stylesheet" type="text/css" href="./css/tk.css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i" rel="stylesheet">
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js" type="text/javascript"></script>-->
+  <!--<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>-->
+  <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>-->
+  <script src="./js/jQuery.js"></script>
+  <script src="./js/format-google-calendar.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
+  <script src="./js/weather.js"></script>
+  <script src="./js/news.js"></script>
+  
+  <script>
+    function startTime() {
+      var time = new Date();
+      var h = time.getHours();
+      var m = time.getMinutes();
+      var s = time.getSeconds();
+      h = (h < 10 ? "0" : "" ) + h;
+      m = (m < 10 ? "0" : "" ) + m;
+      s = (s < 10 ? "0" : "" ) + s;
+      // m = checkTime(m);
+      // s = checkTime(s);
+      document.getElementById('clock').innerHTML =
+      h + ":" + m + ":" + s;
+      var t = setTimeout(startTime, 500);
+    }
+  </script>
+
+</head>
+<body onload="startTime()">
+
+<div class="wrapper">
+
+  <header class="noborder roundall boxshadow">
+    <div class="top bg-tk noborder f-l roundall">
+      <!--<img src="./images/tk_logo.png" style=" position: absolute; left: 0; top: 0; width:80px; height:80px; padding-top: 10px; padding-left: 40px; padding-bottom: 10px;">-->
+      <h2>Infoskjerm for ansatte på Flatåsen skole</h2>
+    </div>
+  </header>
+  
+  <aside class="noborder">
+    <div class="info noborder">
+      <div class="now roundall boxshadow">
+        <div class="date bg-tk f-m">
+          <h3 id="date"></h3>
+        </div>
+      
+        <div class="clock bg-white f-m">
+          <!--<span class="span-tk"></span>-->
+          <a id="clock">...</a>
+        </div>
+      </div>
+      
+      <div class="weather bg-white f-s roundall boxshadow">
+        <!--<span class="span-tk"></span>-->
+        <div class="dayBlock">
+          <div class="day">I dag</div>
+          <div class="clim"></div>
+          <div class="temp"></div>
+        </div>
+        
+        <div class="castBlock">
+          <div class="day1">I morgen</div>
+          <div class="clim1"></div>
+          <div class="temp1"></div>
+        </div>
+        <div class="castBlock">
+            <div id="dayAfter" class="day1">...</div>
+          <div class="clim2"></div>
+          <div class="temp2"></div>
+        </div>
+      </div>
+      
+      <div class="cal roundall boxshadow">
+        <!--<span class="span-tk"></span>-->
+        <div class="calHead bg-tk f-m">
+          <h4>Kalender</h4>
+        </div>
+        <div class="calEvents bg-white f-s">
+          <ul id="eventsUpcoming">
+          </ul>
+        </div>
+      </div>
+      
+      <div class="ikt bg-white f-s roundall boxshadow">
+        <h5>EIHE / 90 57 06 75</h5>
+        <h5>Lenken til denne siden er [kommer]</h5>
+      </div>
+      
+      <!--<div class="extlink bg-white f-s roundall boxshadow">-->
+      <!--  <h5>Lenken til denne siden er goo.gl/[tekst]</h5>-->
+      <!--</div>-->
+    </div>
+  </aside>
+  
+  <section class="noborder roundall boxshadow">
+    <!--<center>-->
+      <div class="roundall" style="width:1422px;height:800px;overflow:hidden;" >
+        <iframe style="position:relative;left:-1px;top:-1px;" src="https://docs.google.com/presentation/d/10bCFh7dGs7UVevmn34f0vRHmfrbDPt8TCk4pmuIMFTE/embed?start=true&loop=true&delayms=3000" frameborder="0" width="1424" height="830" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      </div>
+    <!--</center>-->
+  </section>
+  
+  <footer class="noborder">
+    <!--<div style="width:100%; margin:0; box-sizing:border-box;">-->
+    	<div class="news noborder bg-white roundall boxshadow" id="feedContainer">
+      	<div class="n-title bg-tk f-m">
+      	  <h2>www.nrk.no</h2>
+    	  </div>
+      	
+      	<!--<div class="n-spacer"></div>-->
+      	
+      	<div class="newsFeed f-s" id="feedContainer">
+      	  <!--<span class="span-tk"></span>-->
+          <ul>
+            
+            <li style="display: none; width: 100%;">
+              <a target="_blank" href="#">
+                <span>Laster inn...</span></a>
+            </li>
+            
+            <li style="width: 100%; display: none;">
+              <a target="_blank" href="#">
+                <span>Laster inn...</span></a>
+            </li>
+            
+            <li style="width: 100%; display: none;">
+              <a target="_blank" href="#">
+                <span>Laster inn...</span></a>
+            </li>
+            
+            <li style="width: 100%; display: block;">
+              <a target="_blank" href="#">
+                <span>Laster inn...</span></a>
+            </li>
+            
+            <li>
+              <a target="_blank" href="#">
+                <span>Laster inn...</span></a>
+            </li>
+            
+            <li>
+              <a target="_blank" href="#">
+                <span>Laster inn...</span></a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+      
+      <!--<div class="credit bg-white noborder f-s roundall boxshadow">-->
+      <!--  <div class=halfbox>-->
+      <!--    <h5>EIHE@trondheim.kommune.no</h5>-->
+      <!--  </div>-->
+      <!--  <div class=halfbox>-->
+      <!--    <h5>TLF: 90 57 06 75</h5>-->
+      <!--  </div>-->
+        
+      <!--</div>-->
+    <!--</div>-->
+  </footer>
+
+</div>
+
+<script> //newsFeed
+	$(window).load(function(e) {
+        $("#feedContainer").newsFeed({
+			effect		:"fade",
+			autoplay	:true,
+			timer		:3000,
+		// 	color		:"blue",
+			feed		:"http://www.nrk.no/nyheter/siste.rss",
+			feedlabels	:"false",
+			feedcount	:10
+		});
+  });
+</script>
+
+<script> //Date calc for date and weather
+  var d = new Date();
+  var days = ["Søndag","Mandag","Tirsdag","Onsdag","Torsdag","Fredag","Lørdag"];
+  var months = ["januar","februar","mars","april","mai","juni","juli","august","september","oktober","november","desember"];
+  // var tomorrow = ["1","2","3","4","5","6","0"];
+  var dayAfter = ["2","3","4","5","6","0","1"];
+  document.getElementById("date").innerHTML = days[d.getDay()] + " " + d.getDate() + ". " + months[d.getMonth()];
+  document.getElementById("dayAfter").innerHTML = days[dayAfter[d.getDay()]];
+</script>
+
+<script>
+  formatGoogleCalendar.init({
+    calendarUrl: 'https://www.googleapis.com/calendar/v3/calendars/sqv92ot8fjn8lef4r0g0r246bk@group.calendar.google.com/events?key=AIzaSyArS7t3gqCS4f2sMwwS4m87jAHEX_4XVxs',
+    past: false,
+    upcoming: true,
+    sameDayTimes: true,
+    pastTopN: 20,
+    upcomingTopN: 10,
+    itemsTagName: 'li',
+    upcomingSelector: '#eventsUpcoming',
+    pastSelector: '#events-past',
+    upcomingHeading: '',
+    pastHeading: '',
+    format: ['*summary*', '*date*', '*description*', '<span class="location">Sted: </span>','*location*']
+  });
+</script>
+
+<!--<script>-->
+<!--  if (screen.width>=1280) {document.write("<style>body{zoom:93%;}</style>");}-->
+<!--  if (screen.width>=1366) {document.write("<style>body{zoom:100%;}</style>");}-->
+<!--  if (screen.width>=1600) {document.write("<style>body{zoom:117%;}</style>");}-->
+<!--  if (screen.width>=1920) {document.write("<style>body{zoom:141%;}</style>");}-->
+<!--  if (screen.width>=2560) {document.write("<style>body{zoom:187%;}</style>");}-->
+<!--  if (screen.width>=3840) {document.write("<style>body{zoom:281%;}</style>");}-->
+<!--</script>-->
+    
+</body>
+</html>
